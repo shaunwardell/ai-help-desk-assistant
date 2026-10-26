@@ -30,7 +30,15 @@ if prompt := st.chat_input('Describe your Windows or networking problem...'):
     
     with st.chat_message('user'):
         st.markdown(prompt)
-    result = troubleshoot(prompt)
+        # Find the most recent user message before the current one.
+        previous_issue = ""
+
+        for item in reversed(st.session_state.messages[:-1]):
+            if item["role"] == "user":
+                previous_issue = item["content"]
+                break
+
+        result = troubleshoot(prompt, previous_issue=previous_issue)
     
     lines = [f"### {result['title']}", '', *[f'{i}. {step}' for i, step in enumerate(result['steps'], 1)]]
     

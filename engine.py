@@ -41,11 +41,43 @@ GUIDES = (
 
 ESCALATE = ('ransomware','hacked','compromised','password reset','admin password', 'administrator password', 'data breach','phishing','malware infection')
 
-def troubleshoot(message: str) -> dict:
+def troubleshoot(message: str, previous_issue: str = "") -> dict:
     message = message.strip()
     if not message:
         return {'title': 'Tell me what happened', 'steps': ['Describe the symptom, your operating system, and any error message.'], 'caution': '', 'source': 'Guided local rules'}
     lowered = message.lower()
+        # Recognize when the user starts a different problem.
+    new_issue_phrases = (
+        "new problem",
+        "new issue",
+        "new question",
+        "next issue",
+        "next problem",
+        "different problem",
+    )
+
+    starting_new_issue = any(
+        phrase in lowered for phrase in new_issue_phrases
+    )
+
+    # Short follow-ups can reuse the previous troubleshooting issue.
+    follow_up_phrases = (
+        "still",
+        "persists",
+        "same issue",
+        "same problem",
+        "not working",
+        "didn't work",
+        "did not work",
+    )
+
+    is_short_follow_up = (
+        len(message.split()) <= 8
+        or any(phrase in lowered for phrase in follow_up_phrases)
+    )
+
+    if previous_issue and is_short_follow_up and not starting_new_issue:
+        lowered = f"{previous_issue.lower()} {lowered}"
     if any(term in lowered for term in ESCALATE):
         return {'title': 'Human IT support recommended', 'steps': ['Disconnect from suspicious links or attachments.', 'Do not share passwords, authentication codes, or sensitive files.', 'Contact your organization’s IT or security team using a trusted channel.', 'Record the error message and approximate time without exposing private data.'], 'caution': 'This prototype cannot investigate or remediate security incidents.', 'source': 'Guided local rules'}
     # Prioritize specific DNS symptoms over generic internet keywords.

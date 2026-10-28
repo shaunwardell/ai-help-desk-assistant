@@ -1,0 +1,11 @@
+scenario,previous_issue,current_message,expected_title,before_title,after_title,before_pass,after_pass
+Wi-Fi follow-up,My Wi-Fi keeps disconnecting.,It still isn't working.,Wi-Fi and internet connection,A few questions first,Wi-Fi and internet connection,False,True
+Operating system follow-up,My Wi-Fi keeps disconnecting.,Windows 10,Wi-Fi and internet connection,A few questions first,Wi-Fi and internet connection,False,True
+DNS follow-up,I have a DNS error.,The issue persists.,DNS and website name resolution,A few questions first,DNS and website name resolution,False,True
+Slow computer follow-up,My computer is running slow.,I restarted but it still happens.,Slow Windows computer,A few questions first,Slow Windows computer,False,True
+Printer follow-up,My printer is not printing.,Still not working.,Printer not working,A few questions first,Printer not working,False,True
+New printer issue,My Wi-Fi keeps disconnecting.,My printer is not printing.,Printer not working,Printer not working,Printer not working,True,True
+New slow computer issue,My Wi-Fi keeps disconnecting.,New problem: My computer is very slow.,Slow Windows computer,Slow Windows computer,Slow Windows computer,True,True
+Security escalation,My Wi-Fi keeps disconnecting.,I think my computer has been hacked.,Human IT support recommended,Human IT support recommended,Human IT support recommended,True,True
+Unrelated unsupported issue,My Wi-Fi keeps disconnecting.,New problem: My keyboard is broken.,A few questions first,A few questions first,A few questions first,True,True
+Short follow-up,My printer is not printing.,Windows 11,Printer not working,A few questions first,Printer not working,False,True

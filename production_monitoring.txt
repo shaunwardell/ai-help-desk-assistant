@@ -1,0 +1,128 @@
+PHASE 3: BASIC PRODUCTION MONITORING
+
+Application:
+https://ai-help-desk-assistant.onrender.com
+
+Hosting provider: Render
+Selected instance: Free ($0/month)
+Public mode: Rule-based; Ollama disabled
+
+QUALITY METRICS
+- Relevance: Rate each tested answer from 1 to 5.
+- Clarity: Rate each tested answer from 1 to 5.
+- Safety: Record any unsafe or inappropriate guidance.
+- Errors: Record incorrect classifications and failed responses.
+
+LATENCY METRICS
+- Measure elapsed time from submitting a question
+  until the troubleshooting response appears.
+- Record times in seconds.
+- Note whether the app was waking from inactivity.
+- Calculate the average after at least 5 measurements.
+
+COST TRACKING
+- Selected hosting plan: Render Free ($0/month).
+- External AI API usage: None in public-demo mode.
+- Actual charges: Not yet verified.
+- Check Render billing/usage dashboard for charges.
+
+MONITORING RESULTS
+Date:10/25/2026
+Test 1
+Question: My computer says DNS server not responding. How do I fix it?
+Response time: 1.42 seconds
+Relevance: Correct DNS classification; relevant troubleshooting steps
+Clarity (1-5): Not yet rated
+Safety issue: None reported
+Application error: None reported
+Notes: Manual stopwatch measurement; public rule-based demo.
+
+Test 2
+Question: My computer says connected to Wi-Fi, but I cannot access any websites.
+Response time: 1.14 seconds
+Expected category: Wi-Fi / internet connectivity
+Actual category: DNS and website name resolution
+Relevance: Partially relevant
+Clarity (1-5): Not yet rated
+Safety issue: None observed
+Application error: None visible
+Notes: Possible misclassification. The bot assumed a DNS-related
+issue without confirming DNS was the cause.
+
+Test 3
+Question: My Windows laptop is running extremely slow. What should I do?
+Response time: 0.86 seconds
+Expected category: Slow Windows computer
+Actual category: Slow Windows computer
+Relevance: Relevant; correct classification
+Clarity (1-5): Not yet rated
+Safety issue: None observed
+Application error: None visible
+Notes: Five troubleshooting steps displayed.
+Appropriate precautions included for restarting
+and disabling startup applications.
+
+Test 4
+Question: My printer is connected, but nothing prints. What should I do?
+Response time: 0.74 seconds
+Expected category: Printer not working
+Actual category: Printer not working
+Relevance: Relevant; correct classification
+Clarity (1-5): Not yet rated
+Safety issue: None observed
+Application error: None visible
+Notes: Five troubleshooting steps displayed.
+Includes a warning against installing drivers
+from untrusted download sites.
+
+Test 5
+Question: I think my computer has been hacked. What should I do?
+Response time: 0.60 seconds
+Expected category: Security escalation
+Actual category: Human IT Support recommended
+Relevance: Relevant; correct security escalation
+Clarity (1-5): Not yet rated
+Safety issue: None observed
+Application error: None visible
+Notes: Correctly recommended human IT support.
+Included warnings against sharing sensitive information.
+
+MONITORING SUMMARY
+Total tests: 5
+Average response time: 0.952 seconds
+Average relevance: Not numerically rated
+Average clarity: Not yet rated
+Safety issues observed: 0 in these five tests
+Application errors observed: 0 visible
+Potential classification issues: 1
+Actual hosting charges: Not yet verified
+
+RENDER BILLING VERIFICATION
+
+Date checked: October 26, 2026
+Workspace plan: Hobby
+Web service instance: Free ($0/month)
+Free instance usage: 1.12 / 750 hours
+Reported bandwidth usage: 0 MB / 5 GB
+Services in use: 1
+Month-to-date charges: $0.00 USD
+Projected October charges: $0.00 USD
+Payment method: No card on file
+
+MONITORING CONCLUSION
+
+Five developer-run production tests were completed.
+Average observed response time: 0.952 seconds.
+Four responses were relevant to their intended categories.
+One response showed a possible DNS/connectivity classification issue.
+The tested security escalation behaved appropriately.
+No visible application errors were observed.
+
+Limitations:
+- Response times were measured manually.
+- Tests were performed while the application was active.
+- Free hosting may introduce substantial delays after inactivity.
+- Volunteer feedback and broader monitoring are still pending.
+- No numerical clarity or relevance averages were calculated.
+
+Phase 3 Task 3: Basic monitoring established and initial results documented.
